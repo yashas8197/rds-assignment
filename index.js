@@ -20,6 +20,8 @@ async function loadHtml(file, elementId) {
 document.addEventListener("DOMContentLoaded", async () => {
   await loadHtml("instructions.html", "main-content");
 
+  // Load instructions
+
   // Load lift system form interaction
   const liftSystemForm = document.getElementById("lift-system-form");
 
@@ -32,15 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const totalLifts = parseInt(
       document.getElementById("total-lifts-input").value
     );
-
-    if (totalFloors < 2 && totalFloors > 50) {
-      alert("Number of floors should between 2 and 50");
-      return;
-    }
-    if (totalLifts < 1 && totalFloors > 50) {
-      alert("Number of lifts should between 1 and 50");
-      return;
-    }
 
     loadLiftSimulation(totalFloors, totalLifts);
   });
@@ -65,20 +58,39 @@ function generateBuilding(totalFloors, totalLifts) {
     const floorDiv = document.createElement("div");
     floorDiv.className = "floor";
 
+    // Floor number
+    /* const floorNumberDiv = document.createElement("div");
+    floorNumberDiv.className = "floor-number";
+    if (floor === 0) {
+      floorNumberDiv.innerHTML = `0th Floor`;
+    } else if (floor === 1) {
+      floorNumberDiv.innerHTML = `${floor}st Floor`;
+    } else if (floor === 2) {
+      floorNumberDiv.innerHTML = `${floor}nd Floor`;
+    } else if (floor === 3) {
+      floorNumberDiv.innerHTML = `${floor}rd Floor`;
+    } else {
+      floorNumberDiv.innerHTML = `${floor}th Floor`;
+    } */
+
+    // floorDiv.appendChild(floorNumberDiv);
+
     // Floor control system
     const floorControl = `
       <div class="floor-lift-control">
         ${
           floor !== totalFloors - 1
             ? ` <div class="floor-lift-control-up">
-                  <button class="floor-lift-control-button" data-floor=${floor} data-direction="up">up</button>
+                  <div class="floor-lift-control-screen"></div>
+                  <button class="floor-lift-control-button" data-floor=${floor} data-direction="up">UP</button>
                 </div>`
             : ""
         }
         ${
           floor !== 0
             ? ` <div class="floor-lift-control-down">
-                  <button class="floor-lift-control-button" data-floor=${floor} data-direction="down">down</button>
+                  <div class="floor-lift-control-screen"></div>
+                  <button class="floor-lift-control-button" data-floor=${floor} data-direction="down">DOWN</button>
                 </div>`
             : ""
         }
@@ -105,7 +117,8 @@ function generateBuilding(totalFloors, totalLifts) {
                 <div class="lift-door-left"></div>
                 <div class="lift-door-right"></div>
             </div>
-        </div>`;
+        </div>
+        `;
       }
       floorLiftsDiv.appendChild(floorLiftDiv);
     }

@@ -145,13 +145,22 @@ body {
 } */
 
 .floor-lift-control-button {
-  padding: 7px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 14px;
   border-radius: 5px;
-  background-color: rgb(208, 42, 42);
+  /* background-color: rgb(208, 42, 42); */
+  cursor: pointer;
+  transition: background-color 0.3s;
   cursor: pointer;
   /* width: 40%; */
-  color: white;
+  /* color: white; */
   /* transition: background-color 0.3s; */
+}
+
+.floor-lift-control-button:hover {
+  background-color: #007bff;
+  color: #fff;
 }
 
 .floor-lift-control-button:disabled {
@@ -170,7 +179,7 @@ body {
 .floor-lift {
   height: 110px;
   width: 90px;
-  background-color: rgb(226, 145, 145);
+  background-color: white;
   /* border-top-left-radius: 5px; */
   /* border-top-right-radius: 5px; */
 }
@@ -181,7 +190,7 @@ body {
   height: 110px;
   width: 90px;
   transition: transform 0s;
-  background-color: #bebe4a;
+  background-color: #ffff00;
   position: absolute;
   overflow: hidden;
   transition: transform 2s linear;
@@ -194,7 +203,7 @@ body {
   transition: transform 2.5s;
   width: 50%;
   height: 150%;
-  background-color: black;
+  background-color: #00ffff;
 }
 
 .lift-door-left {
