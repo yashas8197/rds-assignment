@@ -1,0 +1,260 @@
+/* index.html */
+.html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#main-content {
+  padding: 2rem;
+  margin: 5rem;
+  border-radius: 0.5rem;
+  max-width: 90%;
+}
+
+#lift-system-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#lift-system-inputs div {
+  display: flex;
+  flex-direction: column;
+}
+
+#lift-system-inputs label {
+  margin-bottom: 0.5rem;
+}
+
+#lift-system-inputs input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+#lift-system-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #0c1116;
+  color: #f8fafc;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#lift-system-form button:hover {
+  background-color: #2c5282;
+}
+
+/* lift-simulation.html */
+#lift-simulation-section {
+  font-size: 1.5rem;
+  color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+#lift-simulation-section h1 {
+  margin: 1rem;
+  text-decoration: underline;
+  margin: 0 auto;
+}
+
+#lift-simulation-para {
+  margin: 0 auto;
+}
+
+#building {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* color: white; */
+  /* border-top-left-radius: 5px; */
+  /* border-top-right-radius: 5px; */
+  /* padding: 20px 0; */
+  position: relative;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.floor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 140px;
+  /* -webkit-box-shadow: 0px -4px 3px #eeeee4; */
+  /* -moz-box-shadow: 0px -4px 3px #eeeee4; */
+  /* box-shadow: 0px -4px 3px #eeeee4; */
+  gap: 2rem;
+}
+
+.floor-lift-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  min-width: 6rem;
+  /* background-color: #eeeee4; */
+  /* border-radius: 5px; */
+  gap: 5px;
+}
+
+.floor-lift-control-up,
+.floor-lift-control-down {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* gap: 5px; */
+  width: 100%;
+}
+
+/* .floor-lift-control-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2596be;
+  width: 60%;
+  justify-content: space-evenly;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+} */
+
+.floor-lift-control-button {
+  padding: 7px;
+  border-radius: 5px;
+  background-color: rgb(208, 42, 42);
+  cursor: pointer;
+  /* width: 40%; */
+  color: white;
+  /* transition: background-color 0.3s; */
+}
+
+.floor-lift-control-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.floor-lifts {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  gap: 10px;
+  /* margin-right: 20px; */
+}
+
+.floor-lift {
+  height: 110px;
+  width: 90px;
+  background-color: rgb(226, 145, 145);
+  /* border-top-left-radius: 5px; */
+  /* border-top-right-radius: 5px; */
+}
+
+.lift {
+  /* border-top-left-radius: 5px; */
+  /* border-top-right-radius: 5px; */
+  height: 110px;
+  width: 90px;
+  transition: transform 0s;
+  background-color: #bebe4a;
+  position: absolute;
+  overflow: hidden;
+  transition: transform 2s linear;
+}
+
+.lift-door-left,
+.lift-door-right {
+  position: absolute;
+  /* background-color: #eeeee4; */
+  transition: transform 2.5s;
+  width: 50%;
+  height: 150%;
+  background-color: black;
+}
+
+.lift-door-left {
+  left: 0;
+}
+
+.lift-door-right {
+  right: 0;
+}
+
+.lift.open .lift-door-left {
+  transform: translateX(-50px);
+}
+
+.lift.open .lift-door-right {
+  transform: translateX(50px);
+}
+
+/* .lift-door-screen { */
+/* display: flex; */
+/* flex-direction: row; */
+/* justify-content: center; */
+/* align-items: center; */
+/* background-color: #2596be; */
+/* border-top-left-radius: 5px; */
+/* border-top-right-radius: 5px; */
+/* color: white; */
+/* width: 100%; */
+/* height: 20%; */
+/* justify-content: space-evenly; */
+/* } */
+
+/* .lift-door-screen-up,
+.lift-door-screen-down,
+.lift-door-screen-text {
+  width: 100%;
+  transition: background-color 0.5s;
+  text-align: center;
+}
+ */
+.lift-door {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* flex-direction: row; */
+  /* align-items: center; */
+  height: 100%;
+  /* width: 100%; */
+}
+
+/* .floor-number {
+  background-color: gold;
+  color: black;
+  text-align: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 20px 10px;
+  max-height: 50px;
+  max-width: 50px;
+  margin-left: 20px;
+  overflow: visible;
+  width: 100%;
+} */

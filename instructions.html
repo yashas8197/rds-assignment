@@ -1,0 +1,30 @@
+<section id="instructions-section" class="container">
+  <h1>Lift Simulation</h1>
+  <form id="lift-system-form" class="container">
+    <div id="lift-system-inputs">
+      <div class="form-container">
+        <label for="total-floors-input">Floors:</label>
+        <input
+          type="number"
+          id="total-floors-input"
+          name="total-floors-input"
+          min="2"
+          max="50"
+          required
+        />
+      </div>
+      <div>
+        <label for="total-lifts-input">Lifts:</label>
+        <input
+          type="number"
+          id="total-lifts-input"
+          name="total-lifts-input"
+          min="1"
+          max="50"
+          required
+        />
+      </div>
+    </div>
+    <button type="submit">Generate</button>
+  </form>
+</section>
