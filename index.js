@@ -58,23 +58,6 @@ function generateBuilding(totalFloors, totalLifts) {
     const floorDiv = document.createElement("div");
     floorDiv.className = "floor";
 
-    // Floor number
-    /* const floorNumberDiv = document.createElement("div");
-    floorNumberDiv.className = "floor-number";
-    if (floor === 0) {
-      floorNumberDiv.innerHTML = `0th Floor`;
-    } else if (floor === 1) {
-      floorNumberDiv.innerHTML = `${floor}st Floor`;
-    } else if (floor === 2) {
-      floorNumberDiv.innerHTML = `${floor}nd Floor`;
-    } else if (floor === 3) {
-      floorNumberDiv.innerHTML = `${floor}rd Floor`;
-    } else {
-      floorNumberDiv.innerHTML = `${floor}th Floor`;
-    } */
-
-    // floorDiv.appendChild(floorNumberDiv);
-
     // Floor control system
     const floorControl = `
       <div class="floor-lift-control">
