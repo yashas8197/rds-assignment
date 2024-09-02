@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("Number of floors should between 2 and 50");
       return;
     }
-    if (totalFloors === 0 && totalLifts === 0) {
+    if (totalFloors === 0 || totalLifts === 0) {
       alert("Number of floors and lifts should be more then 1");
       return;
     }
-    if (totalFloors === 1 && totalLifts === 1) {
+    if (totalFloors === 1 || totalLifts === 1) {
       alert("Number of floors and lifts should be more then 1");
       return;
     }
