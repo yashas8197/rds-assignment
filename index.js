@@ -35,6 +35,23 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("total-lifts-input").value
     );
 
+    if (totalFloors < 2 && totalFloors > 50) {
+      alert("Number of floors should between 2 and 50");
+      return;
+    }
+    if (totalFloors === 0 && totalLifts === 0) {
+      alert("Number of floors and lifts should be more then 1");
+      return;
+    }
+    if (totalFloors === 1 && totalLifts === 1) {
+      alert("Number of floors and lifts should be more then 1");
+      return;
+    }
+    if (totalLifts < 1 && totalFloors > 50) {
+      alert("Number of lifts should between 1 and 50");
+      return;
+    }
+
     loadLiftSimulation(totalFloors, totalLifts);
   });
 });
@@ -57,6 +74,23 @@ function generateBuilding(totalFloors, totalLifts) {
   for (let floor = totalFloors - 1; floor >= 0; floor--) {
     const floorDiv = document.createElement("div");
     floorDiv.className = "floor";
+
+    // Floor number
+    const floorNumberDiv = document.createElement("div");
+    floorNumberDiv.className = "floor-number";
+    if (floor === 0) {
+      floorNumberDiv.innerHTML = `0`;
+    } else if (floor === 1) {
+      floorNumberDiv.innerHTML = `${floor}`;
+    } else if (floor === 2) {
+      floorNumberDiv.innerHTML = `${floor}`;
+    } else if (floor === 3) {
+      floorNumberDiv.innerHTML = `${floor}`;
+    } else {
+      floorNumberDiv.innerHTML = `${floor}`;
+    }
+
+    floorDiv.appendChild(floorNumberDiv);
 
     // Floor control system
     const floorControl = `
