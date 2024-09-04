@@ -35,20 +35,41 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("total-lifts-input").value
     );
 
-    if (totalFloors < 2 && totalFloors > 50) {
-      alert("Number of floors should between 2 and 50");
+    if (totalFloors === 0) {
+      alert(
+        "Number of floors must be greater than 1, as lifts are used for buildings with more than one floor."
+      );
       return;
     }
-    if (totalFloors === 0 || totalLifts === 0) {
-      alert("Number of floors and lifts should be more then 1");
+    if (totalFloors === 1) {
+      alert(
+        "Number of floors should be more then 1, as lifts are used for buildings with more than one floor."
+      );
       return;
     }
-    if (totalFloors === 1 || totalLifts === 1) {
-      alert("Number of floors and lifts should be more then 1");
+
+    const nonNumericPattern = /[^0-9]/;
+
+    if (
+      nonNumericPattern.test(totalFloors) ||
+      nonNumericPattern.test(totalLifts)
+    ) {
+      alert("Invalid inputs. Please enter valid numbers only.");
       return;
     }
-    if (totalLifts < 1 && totalFloors > 50) {
-      alert("Number of lifts should between 1 and 50");
+
+    if (totalFloors < 0) {
+      alert("Total Floors must be greater then 1");
+      return;
+    }
+
+    if (totalLifts < 0) {
+      alert("Total Lift should be atleast 1");
+      return;
+    }
+
+    if (totalLifts === 0) {
+      alert("Total Lift should be atleast 1");
       return;
     }
 
