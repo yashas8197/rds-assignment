@@ -6,9 +6,9 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #e2e8f0;
   min-height: 100vh;
   display: flex;
-  background-color: #f4f4f4;
 }
 
 .container {
@@ -20,21 +20,13 @@ body {
 }
 
 #main-content {
+  background-color: #f8fafc;
   padding: 2rem;
   margin: 5rem;
   border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
   max-width: 90%;
-}
-
-#instructions-section {
-  margin-left: 3rem;
-  margin-bottom: 6rem;
-  background-color: white;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #lift-system-inputs {
@@ -60,17 +52,17 @@ body {
 }
 
 #lift-system-form button {
-  padding: 10px 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
   border: none;
-  font-size: 14px;
-  border-radius: 5px;
+  background-color: #2b6cb0;
+  color: #f8fafc;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1rem;
 }
 
 #lift-system-form button:hover {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #2c5282;
 }
 
 /* lift-simulation.html */
@@ -96,23 +88,16 @@ body {
   margin: 0 auto;
 }
 
-#total-floors-input {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 400px;
-  margin: auto;
-}
-
 #building {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  /* background-color: #7e6a5f; */
   /* color: white; */
-  /* border-top-left-radius: 5px; */
-  /* border-top-right-radius: 5px; */
-  padding: 20px 40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 20px 0;
   position: relative;
   overflow-x: auto;
   width: 100%;
@@ -125,10 +110,9 @@ body {
   align-items: center;
   justify-content: space-evenly;
   height: 140px;
-  border-bottom: 1px solid black;
-  /* -webkit-box-shadow: 0px -4px 3px #eeeee4; */
-  /* -moz-box-shadow: 0px -4px 3px #eeeee4; */
-  /* box-shadow: 0px -4px 3px #eeeee4; */
+  -webkit-box-shadow: 0px -4px 3px #eeeee4;
+  -moz-box-shadow: 0px -4px 3px #eeeee4;
+  box-shadow: 0px -4px 3px #eeeee4;
   gap: 2rem;
 }
 
@@ -140,48 +124,39 @@ body {
   padding: 5px;
   min-width: 6rem;
   /* background-color: #eeeee4; */
-  /* border-radius: 5px; */
+  border-radius: 5px;
   gap: 5px;
 }
 
 .floor-lift-control-up,
 .floor-lift-control-down {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* gap: 5px; */
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
   width: 100%;
 }
 
-/* .floor-lift-control-screen {
+.floor-lift-control-screen {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2596be;
-  width: 60%;
+  /* background-color: #2596be; */
+  /* width: 60%; */
   justify-content: space-evenly;
   clear: both;
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-} */
+}
 
 .floor-lift-control-button {
-  padding: 10px 20px;
-  border: none;
-  font-size: 14px;
+  padding: 5px;
   border-radius: 5px;
-  /* background-color: rgb(208, 42, 42); */
-  cursor: pointer;
-  transition: background-color 0.3s;
+  /* background-color: gray; */
   cursor: pointer;
   /* width: 40%; */
   /* color: white; */
-  /* transition: background-color 0.3s; */
-}
-
-.floor-lift-control-button:hover {
-  background-color: #007bff;
-  color: #fff;
+  transition: background-color 0.3s;
 }
 
 .floor-lift-control-button:disabled {
@@ -191,53 +166,50 @@ body {
 
 .floor-lifts {
   display: flex;
-  /* flex-direction: row; */
-  /* justify-content: center; */
+  flex-direction: row;
+  justify-content: center;
   gap: 10px;
-  /* margin-right: 20px; */
+  margin-right: 20px;
 }
 
 .floor-lift {
-  height: 110px;
-  width: 90px;
-  background-color: #f4f4f4;
-  /* border-top-left-radius: 5px; */
-  /* border-top-right-radius: 5px; */
+  height: 100px;
+  width: 100px;
+  /* background-color: gray; */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .lift {
-  /* border-top-left-radius: 5px; */
-  /* border-top-right-radius: 5px; */
-  height: 110px;
-  width: 90px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 100px;
+  width: 100px;
   transition: transform 0s;
   background-color: #ffff00;
   position: absolute;
   overflow: hidden;
   transition: transform 2s linear;
-  border: 2px solid black;
-  border-radius: 5px;
+  border: 1px solid black;
 }
 
 .lift-door-left,
 .lift-door-right {
   position: absolute;
-  /* background-color: #eeeee4; */
+  background-color: #eeeee4;
   transition: transform 2.5s;
   width: 50%;
-  height: 150%;
+  height: 140%;
   background-color: #00ffff;
-  /* */
+  border: 1px solid black;
 }
 
 .lift-door-left {
   left: 0;
-  border-right: 2px solid black;
 }
 
 .lift-door-right {
   right: 0;
-  border-left: 2px solid black;
 }
 
 .lift.open .lift-door-left {
@@ -248,48 +220,48 @@ body {
   transform: translateX(50px);
 }
 
-/* .lift-door-screen { */
-/* display: flex; */
-/* flex-direction: row; */
-/* justify-content: center; */
-/* align-items: center; */
-/* background-color: #2596be; */
-/* border-top-left-radius: 5px; */
-/* border-top-right-radius: 5px; */
-/* color: white; */
-/* width: 100%; */
-/* height: 20%; */
-/* justify-content: space-evenly; */
-/* } */
+.lift-door-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #2596be; */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+  width: 100%;
+  height: 20%;
+  justify-content: space-evenly;
+}
 
-/* .lift-door-screen-up,
+.lift-door-screen-up,
 .lift-door-screen-down,
 .lift-door-screen-text {
   width: 100%;
   transition: background-color 0.5s;
   text-align: center;
 }
- */
+
 .lift-door {
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* flex-direction: row; */
-  /* align-items: center; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   height: 100%;
-  /* width: 100%; */
+  width: 100%;
 }
 
-/* .floor-number {
-  background-color: gold;
+.floor-number {
+  /* background-color: gold; */
   color: black;
   text-align: center;
   justify-content: center;
   border-radius: 5px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 20px 10px;
   max-height: 50px;
   max-width: 50px;
   margin-left: 20px;
   overflow: visible;
   width: 100%;
-} */
+}
